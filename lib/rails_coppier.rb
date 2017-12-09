@@ -1,5 +1,4 @@
 require "rails_coppier/version"
+require "rails_coppier/builder"
 
-module RailsCoppier
-  # Your code goes here...
-end
+module RailsCoppier;end

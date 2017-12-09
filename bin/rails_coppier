@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+
+require 'rails_coppier'
+require 'slop'
+
+@options = Slop.parse do |o|
+  o.string '-f', '--from', '* Path of the project to be copied'
+  o.string '-to', '* Path on which a new folder will be created with the copy project'
+  o.on '-h', '--help', 'Shows this description' do
+    puts o
+    exit
+  end
+end
+
+def missing(argument)
+  "missing required key: --#{argument}"
+end
+
+def help
+  ["Legend: \n ",
+   "* - means that the option is required\n",
+   @options].join(' ')
+end
+
+if @options.from? && @options.to?
+  Builder::Project.create(from: @options.from, to: @options.to)
+  Builder.output_result
+else
+  puts missing('from') unless @options.from?
+  puts missing('to') unless @options.to?
+  puts help
+end
