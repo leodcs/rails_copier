@@ -1,9 +1,7 @@
 # RailsCoppier
 <div align="center">
 
-   <div style="width: 250px; height: 250px;">
-    ![Imgur](https://pbs.twimg.com/profile_images/1123677732/logo_avatar_large.png)
-   </div>
+  ![Imgur](https://pbs.twimg.com/profile_images/1123677732/logo_avatar_large.png)
 
   <p>A simple gem that allows you to copy a rails project, including all it's folders, configurations.</p>
 
