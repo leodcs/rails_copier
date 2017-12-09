@@ -1,37 +1,4 @@
-module Builder
-  require 'fileutils'
-  require 'yaml'
-
-  class String
-    def underscore
-      self.scan(/[A-Z][a-z]*/).join("_").downcase
-    end
-  end
-
-  class Folder
-    attr_accessor :folder_name
-
-    def initialize(folder_name)
-      @folder_name = folder_name
-    end
-
-    def save
-      FileUtils::mkdir_p("#{Folder.parent}/#{folder_name}").join
-    end
-
-    def self.current
-      Dir.pwd
-    end
-
-    def self.parent
-      File.expand_path("..", Folder.current)
-    end
-
-    def self.path_to_secrets
-      "#{Folder.current}/config/secrets.yml"
-    end
-  end
-
+module RailsCoppier
   class Project
     attr_accessor :new_name, :folder_name, :from, :to
 
@@ -82,13 +49,5 @@ module Builder
         return line.chomp.gsub('module ', '') if line.include?("module")
       end
     end
-  end
-
-  def output_result
-    puts
-    puts '='*70
-    puts ' ', "Project copied to path: #{@new_dir}", ' '
-    puts '='*70
-    puts
   end
 end

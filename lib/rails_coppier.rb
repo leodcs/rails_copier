@@ -1,4 +1,7 @@
-require "rails_coppier/version"
-require "rails_coppier/builder"
+require 'rails_coppier/version'
+require 'string'
 
-module RailsCoppier;end
+module RailsCoppier
+  autoload :Project, 'rails_coppier/project'
+  autoload :Folder,  'rails_coppier/folder'
+end

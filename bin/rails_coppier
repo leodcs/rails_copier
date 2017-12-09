@@ -4,8 +4,8 @@ require 'rails_coppier'
 require 'slop'
 
 @options = Slop.parse do |o|
-  o.string '-f', '--from', '* Path of the project to be copied'
-  o.string '-to', '* Path on which a new folder will be created with the copy project'
+  o.string '-f', '--from', '* Root path of the rails project to be copied'
+  o.string '--to', '* Path on which a new folder will be created with the copy project'
   o.on '-h', '--help', 'Shows this description' do
     puts o
     exit
@@ -17,14 +17,13 @@ def missing(argument)
 end
 
 def help
-  ["Legend: \n ",
-   "* - means that the option is required\n",
-   @options].join(' ')
+  ['Legend:',
+   '  * - means that the option is required',
+   @options]
 end
 
 if @options.from? && @options.to?
-  Builder::Project.create(from: @options.from, to: @options.to)
-  Builder.output_result
+  RailsCoppier::Project.create(from: @options.from, to: @options.to)
 else
   puts missing('from') unless @options.from?
   puts missing('to') unless @options.to?
