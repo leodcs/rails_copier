@@ -1,5 +1,5 @@
+# RailsCoppier
 <div align="center">
-  # RailsCoppier
 
   ![Imgur](http://i.imgur.com/3DhlBWZ.png)
 
