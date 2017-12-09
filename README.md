@@ -1,4 +1,7 @@
 # RailsCoppier
+
+[![Gem Version](https://badge.fury.io/rb/administrate.svg)](https://badge.fury.io/rb/administrate)
+
 <div align="center">
   
   <img src="https://pbs.twimg.com/profile_images/1123677732/logo_avatar_large.png" height="250" width="250">
