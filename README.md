@@ -1,11 +1,13 @@
-# RailsCoppier
 <div align="center">
+  # RailsCoppier
 
-![Imgur](http://i.imgur.com/3DhlBWZ.png)
+  ![Imgur](http://i.imgur.com/3DhlBWZ.png)
 
-<p>A simple gem that allows you to copy a rails project, including all it's folders, configurations.</p>
+  <p>A simple gem that allows you to copy a rails project, including all it's folders, configurations.</p>
 
-<p>The main gole here is to provide a way of quickly starting a 'new' rails project without having to deal with all that heavy starting configuration (mostly on frontend) we often come across</p> 
+  <p>The main gole here is to provide a way of quickly starting a 'new' rails project without having to deal with all that heavy starting configuration (mostly on frontend) we often come across</p> 
+
+</div>
 
 ## Installation
 
