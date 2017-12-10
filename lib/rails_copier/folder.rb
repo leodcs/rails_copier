@@ -1,4 +1,4 @@
-module RailsCoppier
+module RailsCopier
   class Folder
     attr_accessor :new_name, :new_dir, :from, :to
 

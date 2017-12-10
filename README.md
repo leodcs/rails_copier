@@ -1,6 +1,6 @@
-# RailsCoppier
+# RailsCopier
 
-[![Gem Version](https://badge.fury.io/rb/rails_coppier.svg)](https://badge.fury.io/rb/rails_coppier)
+[![Gem Version](https://badge.fury.io/rb/rails_copier.svg)](https://badge.fury.io/rb/rails_copier)
 
 <div align="center">
   
@@ -14,9 +14,9 @@
 
 ## Installation
 
-Having Ruby working environment properly set up, install <b>rails_coppier</b> as:
+Having Ruby working environment properly set up, install <b>rails_copier</b> as:
 
-    $ gem install rails_coppier
+    $ gem install rails_copier
 
 ## Usage
 
@@ -30,18 +30,18 @@ We have 3 required flags to be passed:
 Let's say we want to copy a project from the current folder to the parent folder, giving to it a new name of <b>NewProject</b>:
  
 ```ruby 
-  rails_coppier --from . --to .. --name NewProject
+  rails_copier --from . --to .. --name NewProject
 ```
 
 or even the short version
 
 ```ruby 
-  rails_coppier -f ./placecar --to . --name NewProject
+  rails_copier -f ./placecar --to . --name NewProject
 ```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/leodcs/rails_coppier. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/leodcs/rails_copier. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -49,4 +49,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the RailsCoppier project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/rails_coppier/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the RailsCopier project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/rails_copier/blob/master/CODE_OF_CONDUCT.md).

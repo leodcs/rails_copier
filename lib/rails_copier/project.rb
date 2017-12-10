@@ -2,7 +2,7 @@ require 'fileutils'
 require 'yaml'
 require 'sudo'
 
-module RailsCoppier
+module RailsCopier
   class Project
     def self.create(from, to, new_name)
       new(from, to, new_name).save

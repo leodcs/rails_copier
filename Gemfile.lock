@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rails_coppier (0.1.1)
+    rails_copier (0.1.1)
       slop (~> 4.6.1)
       sudo (~> 0.1.1)
 
@@ -17,7 +17,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.16)
-  rails_coppier!
+  rails_copier!
   rake (~> 10.0)
 
 BUNDLED WITH

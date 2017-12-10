@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'rails_coppier'
+require 'rails_copier'
 require 'slop'
 
 @options = Slop.parse do |o|
@@ -27,7 +27,7 @@ def valid_options?
 end
 
 if valid_options?
-  RailsCoppier::Project.create(@options[:from], @options[:to], @options[:name])
+  RailsCopier::Project.create(@options[:from], @options[:to], @options[:name])
 else
   puts missing_key('from') unless @options.from?
   puts missing_key('to')   unless @options.to?
