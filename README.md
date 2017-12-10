@@ -1,6 +1,6 @@
 # RailsCoppier
 
-[![Gem Version](https://badge.fury.io/rb/rails_copier.svg)](https://badge.fury.io/rb/rails_copier)
+[![Gem Version](https://badge.fury.io/rb/rails_coppier.svg)](https://badge.fury.io/rb/rails_coppier)
 
 <div align="center">
   
