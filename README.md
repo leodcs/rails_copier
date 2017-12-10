@@ -20,8 +20,24 @@ Having Ruby working environment properly set up, install <b>rails_coppier</b> as
 
 ## Usage
 
-TODO: Write usage instructions here
+We have 3 required flags to be passed:
+  <ul>
+    <li> --from
+    <li> --to
+    <li> --name
+  </ul>
 
+Let's say we want to copy a project from the current folder to the parent folder, giving to it a new name of <b>NewProject</b>:
+ 
+```ruby 
+  rails_coppier --from . --to .. --name NewProject
+```
+
+or even the short version
+
+```ruby 
+  rails_coppier -f ./placecar --to . --name NewProject
+```
 
 ## Contributing
 
