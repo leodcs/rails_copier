@@ -36,7 +36,7 @@ Let's say we want to copy a project from the current folder to the parent folder
 or even the short version
 
 ```ruby 
-  rails_copier -f . --to .. --name NewProject
+  rails_copier -f . -t .. -n NewProject
 ```
 
 ## Contributing
