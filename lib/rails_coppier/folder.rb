@@ -1,25 +1,24 @@
 module RailsCoppier
   class Folder
-    attr_accessor :folder_name
+    attr_accessor :new_name, :new_dir, :from, :to
 
-    def initialize(folder_name)
-      @folder_name = folder_name
+    def self.create(from, to, new_name)
+      new(from, to, new_name).save
+    end
+
+    def initialize(from, to, new_name)
+      @new_name = new_name
+      @from     = from
+      @to       = to
     end
 
     def save
-      FileUtils::mkdir_p("#{Folder.parent}/#{folder_name}").join
+      @new_dir = FileUtils::mkdir_p("#{to}/#{new_name.underscore}").join
+      self
     end
 
-    def self.current
-      Dir.pwd
-    end
-
-    def self.parent
-      File.expand_path("..", Folder.current)
-    end
-
-    def self.path_to_secrets
-      "#{Folder.current}/config/secrets.yml"
+    def path_to_secrets
+      "#{new_dir}/config/secrets.yml"
     end
   end
 end

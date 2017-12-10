@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/leodcs/rails_coppier'
   spec.license       = 'MIT'
 
-  spec.files         = Dir['lib/**/*.rb']
+  spec.files         = Dir['lib/**/*.rb', 'ext/*.rb']
 
   spec.executables   = ['rails_coppier']
   spec.require_paths = ['lib']
@@ -21,4 +21,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '~> 1.16'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_dependency 'slop', '~> 4.6.1'
+  spec.add_dependency 'sudo', '~> 0.1.1'
 end

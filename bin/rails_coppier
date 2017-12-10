@@ -5,27 +5,32 @@ require 'slop'
 
 @options = Slop.parse do |o|
   o.string '-f', '--from', '* Root path of the rails project to be copied'
-  o.string '--to', '* Path on which a new folder will be created with the copy project'
+  o.string '-t', '--to', '* Path on which a new folder will be created with the copy project'
+  o.string '-n', '--name', '* New project name (in CammelCase)'
   o.on '-h', '--help', 'Shows this description' do
     puts o
     exit
   end
 end
 
-def missing(argument)
+def missing_key(argument)
   "missing required key: --#{argument}"
 end
 
 def help
-  ['Legend:',
-   '  * - means that the option is required',
+  ['All the options are required',
    @options]
 end
 
-if @options.from? && @options.to?
-  RailsCoppier::Project.create(from: @options.from, to: @options.to)
+def valid_options?
+  @options.from? && @options.to? && @options.name?
+end
+
+if valid_options?
+  RailsCoppier::Project.create(@options[:from], @options[:to], @options[:name])
 else
-  puts missing('from') unless @options.from?
-  puts missing('to') unless @options.to?
+  puts missing_key('from') unless @options.from?
+  puts missing_key('to')   unless @options.to?
+  puts missing_key('name') unless @options.name?
   puts help
 end
