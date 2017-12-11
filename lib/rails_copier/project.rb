@@ -1,6 +1,5 @@
 require 'fileutils'
 require 'yaml'
-require 'sudo'
 
 module RailsCopier
   class Project
@@ -26,17 +25,13 @@ module RailsCopier
     private
 
     def copy_entry
-      Sudo::Wrapper.run do |sudo|
-        sudo[FileUtils].copy_entry(@folder.from, @folder.new_dir)
-      end
+      FileUtils.copy_entry(@folder.from, @folder.new_dir)
     end
 
     def replace_rails_secret
       data = YAML.load_file(@folder.path_to_secrets)
       data["development"]["secret_key_base"] = bundle_exec_secret
-      Sudo::Wrapper.run do |sudo|
-        sudo[File].write(@folder.path_to_secrets, data.to_yaml)
-      end
+      File.write(@folder.path_to_secrets, data.to_yaml)
     end
 
     def replace_old_name_ocurrencies
@@ -54,19 +49,15 @@ module RailsCopier
     end
 
     def remove_git_repo
-      Sudo::Wrapper.run do |sudo|
-        git_ignore = "#{@folder.new_dir}/.gitignore"
-        git_dir = "#{@folder.new_dir}/.git"
-        sudo[FileUtils].rm(git_ignore) if File.exist?(git_ignore)
-        sudo[FileUtils].rm_rf(git_dir) if Dir.exist?(git_dir)
-      end
+      git_ignore = "#{@folder.new_dir}/.gitignore"
+      git_dir = "#{@folder.new_dir}/.git"
+      FileUtils.rm(git_ignore) if File.exist?(git_ignore)
+      FileUtils.rm_rf(git_dir) if Dir.exist?(git_dir)
     end
 
     def remove_tmp
-      Sudo::Wrapper.run do |sudo|
-        tmp = "#{@folder.new_dir}/tmp"
-        sudo[FileUtils].rm_rf(tmp) if Dir.exist?(tmp)
-      end
+      tmp = "#{@folder.new_dir}/tmp"
+      FileUtils.rm_rf(tmp) if Dir.exist?(tmp)
     end
 
     def bundle_exec_secret
@@ -78,16 +69,12 @@ module RailsCopier
     end
 
     def touch_log_folder
-      Sudo::Wrapper.run do |sudo|
-        Dir["#{@folder.new_dir}/log/**.log"].each { |file| sudo[File].truncate(file, 0) }
-      end
+      Dir["#{@folder.new_dir}/log/**.log"].each { |file| File.truncate(file, 0) }
     end
 
     def remove_database_yml
-      Sudo::Wrapper.run do |sudo|
-        database_yml = "#{@folder.new_dir}/config/database.yml"
-        sudo[FileUtils].rm(database_yml) if File.exist?(database_yml)
-      end
+      database_yml = "#{@folder.new_dir}/config/database.yml"
+      FileUtils.rm(database_yml) if File.exist?(database_yml)
     end
   end
 end

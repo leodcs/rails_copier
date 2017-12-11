@@ -1,16 +1,14 @@
 PATH
   remote: .
   specs:
-    rails_copier (0.1.3)
+    rails_copier (0.1.5)
       slop (~> 4.6.1)
-      sudo (~> 0.1.1)
 
 GEM
   remote: https://rubygems.org/
   specs:
     rake (10.5.0)
     slop (4.6.1)
-    sudo (0.1.1)
 
 PLATFORMS
   ruby
