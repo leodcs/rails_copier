@@ -3,12 +3,12 @@
 [![Gem Version](https://badge.fury.io/rb/rails_copier.svg)](https://badge.fury.io/rb/rails_copier)
 
 <div align="center">
-  
+
   <img src="https://pbs.twimg.com/profile_images/1123677732/logo_avatar_large.png" height="250" width="250">
 
   <p>A simple gem that allows you to copy a rails project, including all it's folders, configurations.</p>
 
-  <p>The main gole here is to provide a way of quickly starting a 'new' rails project without having to deal with all that heavy starting configuration (mostly on frontend) we often come across</p> 
+  <p>The main gole here is to provide a way of quickly starting a 'new' rails project without having to deal with all that heavy starting configuration (mostly on frontend) we often come across</p>
 
 </div>
 
@@ -28,16 +28,20 @@ We have 3 required flags to be passed:
   </ul>
 
 Let's say we want to copy a project from the current folder to the parent folder, giving to it a new name of <b>NewProject</b>:
- 
-```ruby 
+
+```ruby
   rails_copier --from . --to .. --name NewProject
 ```
 
 or even the short version
 
-```ruby 
+```ruby
   rails_copier -f . -t .. -n NewProject
 ```
+
+## Is Windows supported?
+
+Not yet!
 
 ## Contributing
 
