@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rails_copier (0.1.5)
+    rails_copier (0.1.4)
       slop (~> 4.6.1)
 
 GEM
